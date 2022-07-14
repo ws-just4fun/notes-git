@@ -14,7 +14,7 @@
 ===>> ssh-keygen -t rsa -C "youremail@mail.com" -b 4096
 
 :: Then write the SSH ID or name of the file you want to create
-:: You can skip or leave the passphrase
+:: You can skip or leave the passphrase or fill it up
 :: If successful, an image will appear
 
 :: Now check if the SSH file has been created successfully
