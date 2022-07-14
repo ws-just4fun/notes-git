@@ -1,0 +1,99 @@
+1. LOCAL
+    a -> Working Directory (Source Code)
+        b -> Staging
+            c -> Local Repository
+2. REMOTE
+    -> github, gitlab, gitbucket
+
+
+=============================
+=== CONFIGURATION
+=============================
+
+Option configuration(--global. --local)
+
+Example:
+:: Global configuration
+===>> git config --global user.name "Your Name"
+:: Local configuration
+===>> git config --local user.name "Your Name"
+
+
+===>> git config --global user.email "example@mail.com"
+===>> git config --global core.editor "C:\Program Files\Microsoft VS Code\code.exe"
+
+
+=============================
+=== WORKFLOW / LIFECYCLE 
+=============================
+:: Initialize local repository
+===>> git init
+
+:: Check status
+===>> git status
+
+:: Initialize file to Staging
+===>> git add .                  (All)
+===>> git add filename.ext       (Specific)
+
+:: Save to local repository
+===>> git commit -m "Enter your message"
+
+:: Initialize & save
+:: Run this command will running (git add .) then (git commit -m "Your Message")
+===>> git commit -am "Enter your message"
+
+:: Clonning remote repository to local repository
+===>> git clone https://github.com/youraccount/example.git
+
+:: Connecting remote repository with local repository (HTTP)
+===>> git remote add origin https://github.com/youraccount/example.git
+
+:: Check remote status
+===>> git remote -v
+
+:: Save to remote repository
+===>> git push origin master     (Specific)
+===>> git push                   (Push to active branch)
+
+:: Undo changes (Not added yet)
+===>> git checkout filename.ext
+===>> git restore filename.ext
+
+:: Undo changes (Already on staging)
+===>> git reset head filename.ext
+
+:: Undo changes (Already committed)
+===>> git commit --amend (Just change the commit message)
+===>> git reset --soft HEAD^ (Return to staging)
+===>> git reset --hard HEAD^ (Return to the beginning)
+
+:: Update remote repository
+===>> git push origin master        (Specific)
+===>> git push                      (Active branch)
+
+:: Update local repository file from remote repository
+:: This command will update branch master/main
+===>> git fetch origin master
+
+:: Update local repository then merge file from Remote Repository
+:: This command will update active branch
+:: Use this command if you don't make changes to the local repository
+===>> git pull origin master
+
+:: Show history / log
+===>> git log
+===>> git log --oneline
+
+
+:: Alias
+:: Example create alias for looking history
+===>> git config --global alias.myhistory "git log --oneline"
+===>> git myhistory
+
+
+:: Ignore
+:: Restrict git to read an extension
+===>> Create a file with name .gitignore (Required)
+===>> Example ignore html extension, Type .html
+===>> Then commit & push, after that git won't read files with html extension
